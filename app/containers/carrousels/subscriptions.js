@@ -35,13 +35,13 @@ export const subscribeGetDataStore = (navigation) => {
                     });
                 });
                 //Presenting message on screen
-                Alert.alert('Token expires.', [
+                Alert.alert('Token expires', '', [
                     { text: 'Ok' }
                 ])
                 return
             }
             //Presenting message on screen (different error than 401)
-            Alert.alert('There is a connection or server problem. Try again.', [
+            Alert.alert('There is a connection or server problem, try again', '', [
                 { text: 'Ok' }
             ])
             return

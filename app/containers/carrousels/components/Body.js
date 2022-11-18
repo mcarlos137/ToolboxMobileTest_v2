@@ -50,7 +50,7 @@ const ConnectedComponent = ({
     //Function triggered when onPress carrousel iamge
     const onPressImagePresseable = (item) => {
         if (item.videoUrl === undefined || item.videoUrl === null || item.videoUrl === '') {
-            Alert.alert('Video no disponible', [
+            Alert.alert('Video no disponible', '', [
                 { text: 'Ok' }
             ]);
             return

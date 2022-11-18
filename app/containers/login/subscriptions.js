@@ -14,7 +14,7 @@ export const subscribeLoginStore = (navigation) => {
     const unsubscribe = loginStore.subscribe(() => {
         //Evaluating if response is OK
         if (loginStore.getState().responseStatus !== '200') {
-            Alert.alert('Login request failed', [
+            Alert.alert('Login request failed', '', [
                 { text: 'Ok' }
             ]);
             return

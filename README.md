@@ -1,5 +1,4 @@
-ToolboxMobileTest_v2
-# ToolboxMobileTest - React Native
+# ToolboxMobileTest_v2 - React Native
 
 Test Project to demostrate skills for and ToolBox company interview.
 

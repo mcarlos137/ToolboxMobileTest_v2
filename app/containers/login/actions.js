@@ -1,3 +1,10 @@
+/**
+ * Retrieves login type and token data from API with fetch
+ * 
+ * @author [Carlos Molina](https://github.com/mcarlos137)
+ *
+ * @public
+ */
 export const login = () => {
     let url = 'https://echo-serv.tbxnet.com';
     let path = '/v1/mobile/auth';

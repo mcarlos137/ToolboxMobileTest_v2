@@ -1,13 +1,22 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-//COMPONENTS
+//Components
 import LoginScreen from "../app/containers/login";
 import CarrouselsScreen from "../app/containers/carrousels";
 import VideoScreen from "../app/containers/video";
-
+//Creating stack navigator
 const RootStack = createStackNavigator();
 
+/** 
+* Main Component
+* 
+* Including 3 screen components LoginScreen, CarrouselsScreen, VideoScreen
+*/
 const RootStackScreen = ({ navigation, route }) => (
   <RootStack.Navigator>
     <RootStack.Screen
@@ -30,7 +39,13 @@ const RootStackScreen = ({ navigation, route }) => (
 
 export default RootStackScreen;
 
-const getOptions = (title, backgroundColor, type) => {
+/**
+ * Change screen header for navigation stack
+ *
+ * @param {string} title
+ * @param {string} backgroundColor
+ */
+const getOptions = (title, backgroundColor) => {
   let headerTitleAlign = 'center'
   return {
     title: title,

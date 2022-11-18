@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     View,
@@ -8,20 +12,25 @@ import {
 } from 'react-native';
 import * as Animatable from "react-native-animatable";
 import { useTheme } from 'react-native-paper';
-//STORES
+//Stores (REDUX)
 import { loginStore } from '../stores';
-//ACTIONS
+//Actions
 import { login } from '../actions';
-//COMPONENTS
+//Components
 import { ButtonLogin } from './Body_ButtonLogin';
 
+/** 
+* Parent Component 
+*/
 const Component = ({ }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
 
+    //Function triggered when onPress login button
     const onPressButtonLogin = () => {
         loginStore.dispatch(login())
     }
-
+    //Component return
     return (
         <View
             style={styles.container}
@@ -52,6 +61,7 @@ const Component = ({ }) => {
     )
 };
 
+//Styling variables
 const { height } = Dimensions.get("screen");
 const height_logo = height * 0.28;
 

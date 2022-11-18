@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     View,
@@ -8,12 +12,21 @@ import {
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
 
+/** 
+* Child Component
+*
+* @param {string} type
+* @param {object} item
+* @param {function<item>} onPressImagePresseable
+*/
 export const ImagePresseable = ({
     type,
     item,
     onPressImagePresseable,
 }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
+    //Component return
     return (
         <View
             style={{

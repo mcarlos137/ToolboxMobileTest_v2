@@ -1,27 +1,34 @@
-//PRINCIPAL
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main librries
 import React from "react";
-import {
-  View,
-} from "react-native";
-//STORES
+//Stores (REDUX)
 import { settingsStore } from "../../main/stores";
-//SUBSCRIPTIONS
+//Subscriptions
 import { subscribeLoginStore } from "./subscriptions";
 import { subscribeAuthPersistedStore } from "../../main/subscriptions";
-//COMPONENTS
+//Components
 import Body from './components/Body'
 
+/** 
+* Main Component 
+*   
+* @param {object} navigation - injected from navigation stack
+*/
 const LoginScreen = ({ navigation }) => {
 
+  //Variables to handle unsubscriptions actions
   var unsubscribeLoginStore
   var unsubscribeAuthPersistedStore
 
+  //Using effect when focus navigation scope
   React.useEffect(() => {
     const unsubscribe = navigation.addListener("focus", () => {
       console.log("FOCUS ON LOGIN");
-      //START SUBSCRIPTIONS
+      //Start subscriptions
       unsubscribeLoginStore = subscribeLoginStore(navigation)
-      //START ACTIONS
       if (!settingsStore.getState().appStarted) {
         unsubscribeAuthPersistedStore = subscribeAuthPersistedStore()
       }
@@ -29,6 +36,7 @@ const LoginScreen = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
+  //Using effect when blur navigation scope
   React.useEffect(() => {
     const unsubscribe = navigation.addListener("blur", () => {
       console.log("OUT OF LOGIN");
@@ -37,10 +45,12 @@ const LoginScreen = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
+  //Call unsusbcribe to avoid multiple subscriptions mounted at a time
   const unsubscribeAll = () => {
     unsubscribeLoginStore()
   };
 
+  //Component return
   return (
     <Body />
   );

@@ -1,3 +1,9 @@
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+* 
+* Defining stores for reducers
+*/
+
 import { createStore, applyMiddleware, compose } from "redux";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer } from 'redux-persist';

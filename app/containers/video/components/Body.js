@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     StyleSheet,
@@ -7,10 +11,17 @@ import {
 import Video from 'react-native-video'
 import { useTheme } from 'react-native-paper';
 
+/** 
+* Parent Component 
+*   
+* @param {string} videoUrl
+*/
 const Component = ({
     videoUrl,
 }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
+    //Component return
     return (
         <View
             style={[styles.container, { backgroundColor: colors.primaryBackground }]}

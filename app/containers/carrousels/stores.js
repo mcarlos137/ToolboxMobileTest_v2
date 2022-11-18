@@ -1,3 +1,9 @@
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+* 
+* Defining stores for reducers
+*/
+
 import { createStore, applyMiddleware, compose } from "redux";
 import indexReducer from "./reducers/index";
 import getDataReducer from "./reducers/getData";

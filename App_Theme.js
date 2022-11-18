@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import { StatusBar, View, Text } from 'react-native';
 import {
@@ -14,19 +18,21 @@ import {
 import { connect } from "react-redux";
 import { Provider } from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react';
-//COMPONENTS
+//Components
 import RootStackScreen from './screens/RootStackScreen';
 import { authPersistedStore, authPersistor } from './app/main/stores';
 
+//Connected props from settings persistent context
 const mapStateToProps = state => {
     return {
         theme: state.theme,
     };
 };
-
+//Connected component from settings persistent context
 const ConnectedComponent = ({
     theme,
 }) => {
+    //Default Themes props for light (navigation and paper)
     const CustomDefaultTheme = {
         ...NavigationDefaultTheme,
         ...PaperDefaultTheme,
@@ -48,7 +54,7 @@ const ConnectedComponent = ({
             backdrop: 'rgba(255, 255, 255, 0.5)',
         }
     }
-
+    //Default Themes props for dark (navigation and paper)
     const CustomDarkTheme = {
         ...NavigationDarkTheme,
         ...PaperDarkTheme,
@@ -70,6 +76,11 @@ const ConnectedComponent = ({
             backdrop: 'rgba(0, 0, 0, 0.5)',
         }
     }
+    /** 
+    * Main Component
+    * 
+    * Including Paper context, Navigation context, status bar and auth persistence (type and token)
+    */
     return (
         <PaperProvider theme={theme === 'dark-content' ? CustomDarkTheme : CustomDefaultTheme}>
             <NavigationContainer theme={theme === 'dark-content' ? CustomDarkTheme : CustomDefaultTheme}>

@@ -1,8 +1,16 @@
+/**
+ * @author [Carlos Molina](https://github.com/mcarlos137)
+ * 
+ * Initial values reducer states for get data service response
+ */
 const initialState = {
     data: [],
     responseStatus: '200',
 };
 
+/**
+ * @param {object} action  //action.type  - action.payload
+ */
 function rootReducer(state = initialState, action) {
     if (action.type === 'GET_DATA') {
         return Object.assign({}, state, {

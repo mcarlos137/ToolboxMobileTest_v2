@@ -1,14 +1,21 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
-    Dimensions,
     Text,
     StyleSheet,
     TouchableOpacity
 } from 'react-native';
-import * as Animatable from "react-native-animatable";
 import { useTheme } from 'react-native-paper';
 
+/** 
+* Child Component 
+*   
+* @param {function} onPressButtonLogin
+*/
 export const ButtonLogin = ({ 
     onPressButtonLogin
 }) => {

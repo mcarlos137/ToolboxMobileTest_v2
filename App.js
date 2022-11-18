@@ -4,23 +4,25 @@
  *
  * @format
  * @flow strict-local
+ * 
+ * Mofidied by @author [Carlos Molina](https://github.com/mcarlos137)
  */
-//MAIN
+
+//Main libraries
 import React from 'react';
-import type { Node } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
 import { Provider } from "react-redux";
 import { PersistGate } from 'redux-persist/integration/react';
-//STORES
+//Stores (REDUX)
 import { settingsPersistedStore, settingsPersistor } from './app/main/stores';
-//COMPONENTS
+//Components 
 import App_Theme from './App_Theme'
 
-const App: () => Node = () => {
+/** 
+ * Main Component
+ * 
+ * Including persisted state for setting
+ */
+const App = () => {
   return (
     <Provider store={settingsPersistedStore} >
       <PersistGate loading={null} persistor={settingsPersistor}>

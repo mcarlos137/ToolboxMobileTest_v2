@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     View,
@@ -7,11 +11,19 @@ import {
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
 
+/** 
+* Child Component
+*
+* @param {string} theme
+* @param {function<string>} changeSwitchThemeValue
+*/
 export const SwitchTheme = ({
     theme,
     changeSwitchThemeValue,
 }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
+    //Component return
     return (
         <View
             style={{

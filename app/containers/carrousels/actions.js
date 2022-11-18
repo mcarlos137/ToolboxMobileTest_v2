@@ -1,3 +1,13 @@
+/**
+ * Retrieves carrousels data from API with fetch
+ * 
+ * @author [Carlos Molina](https://github.com/mcarlos137)
+ *
+ * @param {string} type
+ * @param {string} token
+ * @param {boolean} updateData
+ * @public
+ */
 export const getData = (type, token, updateData) => {
     let url = 'https://echo-serv.tbxnet.com';
     let path = '/v1/mobile/data';

@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     Text,
@@ -7,10 +11,18 @@ import {
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
 
+/** 
+* Child Component
+*
+* @param {function} onPressButtonLogout
+*/
 export const ButtonLogout = ({
     onPressButtonLogout,
 }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
+
+    //Component return
     return (
         <TouchableOpacity
             style={styles.logoutButton}
@@ -27,6 +39,7 @@ export const ButtonLogout = ({
     )
 };
 
+//Styling variables
 const styles = StyleSheet.create({
     logoutButton: {
         backgroundColor: 'rgb(214, 14, 31)',

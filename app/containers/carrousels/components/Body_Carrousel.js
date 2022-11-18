@@ -1,4 +1,8 @@
-//MAIN
+/**  
+* @author [Carlos Molina](https://github.com/mcarlos137)
+*/
+
+//Main libraries
 import React from 'react';
 import {
     View,
@@ -7,15 +11,24 @@ import {
     FlatList
 } from 'react-native';
 import { useTheme } from 'react-native-paper';
-//COMPONENTS
+//Components
 import { ImagePresseable } from './Body_ImagePresseable';
 
+/** 
+* Child Component
+*
+* @param {object} item
+* @param {function<item>} onPressImagePresseable
+*/
 export const Carrousel = ({
     item,
     onPressImagePresseable
 }) => {
+    //Injecting theme from paper libraries
     const { colors } = useTheme();
+    //Extracting values from object
     const { type, title, items } = item;
+    //Component return
     return (
         <View
             style={{

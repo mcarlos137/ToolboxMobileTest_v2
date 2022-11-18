@@ -8,8 +8,8 @@ import { authPersistedStore } from "./stores"
 //Subscription triggered after authPersistedStore values changes
 export const subscribeAuthPersistedStore = () => {
     const unsubscribe = authPersistedStore.subscribe(() => {
-        console.log('type', authPersistedStore.getState().type)
-        console.log('token', authPersistedStore.getState().token)
+        //console.log('type', authPersistedStore.getState().type)
+        //console.log('token', authPersistedStore.getState().token)
     })
     return unsubscribe;
 }

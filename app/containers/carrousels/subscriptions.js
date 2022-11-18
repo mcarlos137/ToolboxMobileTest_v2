@@ -14,7 +14,6 @@ export const subscribeGetDataStore = (navigation) => {
     const unsubscribe = getDataStore.subscribe(() => {
         //Evaluating if response is OK
         if (getDataStore.getState().responseStatus !== '200') {
-            console.log('responseStatus', getDataStore.getState().responseStatus)
             //Evaluating if response is 401 to logout inmediately
             if (getDataStore.getState().responseStatus === '401') {
                 //Settings persisted values to default
